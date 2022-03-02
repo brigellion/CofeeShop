@@ -70,40 +70,12 @@
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
               <best-item-component
+                v-for="card in coffee"
+                :key="card.id"
                 classItem="shop__item"
-                :name="coffee[0].name"
-                :price="coffee[0].price"
-                :image="coffee[0].img"
-              />
-              <best-item-component
-                classItem="shop__item"
-                :name="coffee[1].name"
-                :price="coffee[1].price"
-                :image="coffee[1].img"
-              />
-              <best-item-component
-                classItem="shop__item"
-                :name="coffee[2].name"
-                :price="coffee[2].price"
-                :image="coffee[2].img"
-              />
-              <best-item-component
-                classItem="shop__item"
-                :name="coffee[3].name"
-                :price="coffee[3].price"
-                :image="coffee[3].img"
-              />
-              <best-item-component
-                classItem="shop__item"
-                :name="coffee[4].name"
-                :price="coffee[4].price"
-                :image="coffee[4].img"
-              />
-              <best-item-component
-                classItem="shop__item"
-                :name="coffee[5].name"
-                :price="coffee[5].price"
-                :image="coffee[5].img"
+                :name="card.name"
+                :price="card.price"
+                :image="card.img"
               />
             </div>
           </div>

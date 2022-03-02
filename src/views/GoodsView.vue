@@ -49,40 +49,12 @@
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
               <best-item-component
+                v-for="card in goods"
+                :key="card.id"
                 classItem="shop__item"
-                :name="goods[0].name"
-                :price="goods[0].price"
-                :image="goods[0].img"
-              />
-              <best-item-component
-                classItem="shop__item"
-                :name="goods[1].name"
-                :price="goods[1].price"
-                :image="goods[1].img"
-              />
-              <best-item-component
-                classItem="shop__item"
-                :name="goods[2].name"
-                :price="goods[2].price"
-                :image="goods[2].img"
-              />
-              <best-item-component
-                classItem="shop__item"
-                :name="goods[3].name"
-                :price="goods[3].price"
-                :image="goods[3].img"
-              />
-              <best-item-component
-                classItem="shop__item"
-                :name="goods[4].name"
-                :price="goods[4].price"
-                :image="goods[4].img"
-              />
-              <best-item-component
-                classItem="shop__item"
-                :name="goods[5].name"
-                :price="goods[5].price"
-                :image="goods[5].img"
+                :name="card.name"
+                :price="card.price"
+                :image="card.img"
               />
             </div>
           </div>
@@ -105,7 +77,7 @@ export default {
           id: 0,
           img: "coffee-1.jpg",
           name: "Solimo Coffee Beans 2kg",
-          price: 10.73,
+          price: 10.75,
         },
         {
           id: 1,

@@ -9,8 +9,12 @@
       "
     >
       <nav-item :link="links.header.link" classLink="header__item">
-        <img :src="require(`@/assets/logo/${links.header.icon}`)" :alt="logo" />
+        <img
+          :src="require(`@/assets/logo/${links.header.icon}`)"
+          :alt="`@/assets/logo/${links.header.icon}`"
+        />
       </nav-item>
+
       <nav-item
         v-for="link in links.other"
         :key="link.id"
