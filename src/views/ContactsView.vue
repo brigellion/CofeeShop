@@ -21,7 +21,7 @@
               alt="Beans logo"
             />
 
-            <form @submit.prevent="logger" action="/" class="mt-5">
+            <form @submit.prevent="submit" action="/" class="mt-5">
               <div class="form-group row">
                 <div class="col col-12 col-sm-3 d-flex align-items-center">
                   <label for="name-input" class="mb-0">
@@ -120,7 +120,7 @@ export default {
     };
   },
   methods: {
-    logger() {
+    submit() {
       console.log(this.form);
     },
   },

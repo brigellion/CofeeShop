@@ -4,10 +4,10 @@
       <div class="row">
         <div class="col-lg-6 offset-lg-3">
           <ul class="footer d-flex flex-wrap">
-            <nav-item :link="links.header.link" classLink="footer__item">
+            <nav-item :link="links.footer.link" classLink="footer__item">
               <img
-                :src="require(`@/assets/logo/${links.header.icon}`)"
-                :alt="`@/assets/logo/${links.header.icon}`"
+                :src="require(`@/assets/logo/${links.footer.icon}`)"
+                :alt="`@/assets/logo/${links.footer.icon}`"
               />
             </nav-item>
             <nav-item
@@ -29,38 +29,10 @@
 import NavItem from "@/components/NavItem";
 export default {
   components: { NavItem },
-  data() {
-    return {
-      links: {
-        header: {
-          id: 0,
-          link: "/",
-          icon: "Logo_black.svg",
-        },
-        other: [
-          {
-            id: 1,
-            text: "Our coffee",
-            link: "/our-coffee",
-          },
-          {
-            id: 2,
-            text: "For your pleasure",
-            link: "/goods-page",
-          },
-          {
-            id: 3,
-            text: "Contact us",
-            link: "/contacts",
-          },
-        ],
-      },
-    };
+  computed: {
+    links() {
+      return this.$store.getters["getFooterLinks"];
+    },
   },
 };
 </script>
-      <img
-        class="beanslogo"
-        src="@/assets/logo/Beans_logo_dark.svg"
-        alt="Beans logo"
-      />
