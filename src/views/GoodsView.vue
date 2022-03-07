@@ -52,9 +52,8 @@
                 v-for="card in goods"
                 :key="card.id"
                 classItem="shop__item"
-                :name="card.name"
-                :price="card.price"
-                :image="card.img"
+                :card="card"
+                @onNavigate="navigate"
               />
             </div>
           </div>
@@ -73,6 +72,11 @@ export default {
   computed: {
     goods() {
       return this.$store.getters["getGoods"];
+    },
+  },
+  methods: {
+    navigate(id) {
+      this.$router.push({ name: "goods", params: { id: id } });
     },
   },
 };
