@@ -66,6 +66,7 @@
 <script>
 import NavBarComponent from "@/components/NavBarComponent.vue";
 import BestItemComponent from "@/components/BestItemComponent.vue";
+import { navigate } from "@/mixins/navigate.js";
 
 export default {
   components: { NavBarComponent, BestItemComponent },
@@ -74,10 +75,11 @@ export default {
       return this.$store.getters["getGoods"];
     },
   },
-  methods: {
-    navigate(id) {
-      this.$router.push({ name: "goods", params: { id: id } });
-    },
+  data() {
+    return {
+      name: "goods",
+    };
   },
+  mixins: [navigate],
 };
 </script>

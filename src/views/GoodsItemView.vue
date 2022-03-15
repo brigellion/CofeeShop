@@ -13,7 +13,6 @@
         <h1 class="title-big">{{ card.name }}</h1>
       </div>
     </div>
-
     <section class="shop">
       <div class="container">
         <div class="row">
@@ -44,7 +43,9 @@
             </div>
             <div class="shop__point">
               <span>Price:</span>
-              <span class="shop__point-price"> {{ card.price }} $</span>
+              <span class="shop__point-price">
+                {{ card.price | addCurrency }}
+              </span>
             </div>
           </div>
         </div>
@@ -63,8 +64,17 @@ export default {
       return this.$route.name;
     },
     card() {
-      return this.$store.getters["getProductById"](this.$route.params.id);
+      //return this.$store.getters["getProductById"](this.$route.params.id);
+      const pageGetter =
+        this.pageName === "coffee" ? "getCoffeeById" : "getGoodsById";
+
+      return this.$store.getters[pageGetter](this.$route.params.id);
     },
   },
 };
 </script>
+
+
+//  const pageGetter = this.pageName === 'coffee' ? 'getCoffeeById' : 'getGoodsById'
+
+//     this.$store.getters[pageGetter ].(this.$route.params.id)
